@@ -1,0 +1,12 @@
+DirectoryIndex index.php
+Options -Indexes
+
+RewriteEngine On
+
+# Block dotfiles such as .env from direct web access.
+RewriteRule "(^|/)\." - [F]
+
+# Serve PHP entry points behind clean directory URLs.
+RewriteRule ^docs/?$ /docs.php [L]
+RewriteRule ^issues/?$ /issues.php [L]
+RewriteRule ^changelog/?$ /changelog.php [L]
